@@ -11,8 +11,8 @@ import com.mycompany.user.repository.UserRepository;
 @Component
 public class UserServiceImpl implements UserService {
 
-    @Value("${spring.kafka.topic.userRegistered}")
-    private String USER_REGISTERED_TOPIC;
+//    @Value("${spring.kafka.topic.userRegistered}")
+//    private String USER_REGISTERED_TOPIC;
 
     private UserRepository userRepository;
     private Sender sender;
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User registerUser(User input) {
         User createdUser = userRepository.save(input);
-        sender.send(USER_REGISTERED_TOPIC, createdUser);
+//        sender.send(USER_REGISTERED_TOPIC, createdUser);
         return createdUser;
     }
 

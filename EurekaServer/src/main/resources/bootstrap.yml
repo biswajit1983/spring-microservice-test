@@ -1,5 +1,11 @@
-server:
-  port: ${port:8761}
+#server:
+#  port: 8010
+#spring:
+#  application:
+#    name: discoveryservice
+
 spring:
-  application:
-    name: discovery-service
+  cloud:
+    config:
+      uri: http://localhost:8012
+      name: http://localhost:8012

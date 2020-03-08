@@ -16,12 +16,13 @@ import com.mycompany.user.service.UserService;
 @RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
+    @Autowired
     private UserService userService;
 
-    @Autowired
-    UserController(UserService userService) {
-        this.userService = userService;
-    }
+//    @Autowired
+//    UserController(UserService userService) {
+//        this.userService = userService;
+//    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/member")
     public ResponseEntity<Iterable<User>> getAll() {

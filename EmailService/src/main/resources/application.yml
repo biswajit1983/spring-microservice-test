@@ -1,7 +1,15 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: email-service
+
 eureka:
   client:
-    registryFetchIntervalSeconds: 1
+#    registryFetchIntervalSeconds: 1
     serviceUrl:
-      defaultZone: http://192.168.0.5:8761/eureka/
-    register-with-eureka: false
-    fetch-registry: false
+      defaultZone: http://localhost:8010/eureka
+      register-with-eureka: true
+      fetch-registry: true
+#    registerWithEureka: false
+#    fetchRegistry: false

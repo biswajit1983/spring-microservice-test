@@ -1,0 +1,30 @@
+server:
+  port: 8012
+
+spring:
+  application:
+    name: config-server
+  profile:
+#    active: dev
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:////Users/biswajitsinha/Projects/spring-microservice-test/EmailServiceConfigProperties/{application}/dev
+        git:
+          uri: https://github.com/biswajit1983/spring-microservice-test.git
+          username: biswajit1983
+          password: bansin1983
+          clone-on-start: true
+#          searchPaths:
+#            - EmailServiceConfigProperties/{application}/{profile}
+eureka:
+#  instance:
+#    hostname: config-server
+  client:
+    registryFetchIntervalSeconds: 1
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka
+      register-with-eureka: true
+      fetch-registry: true
