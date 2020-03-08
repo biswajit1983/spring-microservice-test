@@ -7,9 +7,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/biswajit1983/spring-microservice-test
-            search-paths:
-              - "EmailServiceConfigProperties/{application}/{profile}"
+          uri: https://github.com/biswajit1983/config-prop-server
+          username: biswajit1983
+          password: bansin1983
+#            search-paths:
+#              - EmailServiceConfigProperties/{application}/{profile}
           health:
             enabled: true
       name: config-service
